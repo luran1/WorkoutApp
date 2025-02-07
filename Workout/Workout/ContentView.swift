@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var workoutRoutines: [WorkoutRoutine] = [WorkoutRoutine.exampleWorkoutRoutine]
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ScrollView{
+            LazyVStack{
+                ForEach(workoutRoutines, id: \.self){ workoutRoutine in
+                    Text(workoutRoutine.name)
+                }
+            }
         }
-        .padding()
     }
 }
 

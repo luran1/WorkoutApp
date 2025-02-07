@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WorkoutRoutine: Identifiable {
+class WorkoutRoutine: Identifiable, Hashable {
     var id=UUID()
     var name: String
     var exercises: [Exercise]
@@ -31,13 +31,23 @@ class WorkoutRoutine: Identifiable {
             guard let index = exercises.firstIndex(where: {$0.id == exercise.id}) else {
                 return
             }
-            var temp = exercises.remove(at: index)
+            let temp = exercises.remove(at: index)
             exercises.insert(temp, at: newIndex)
         }
     }
+    static func == (lhs: WorkoutRoutine, rhs: WorkoutRoutine) -> Bool {
+            return lhs.id == rhs.id
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static let exampleWorkoutRoutine = WorkoutRoutine(name: "Legs and Arms Routine", exercises: [Exercise.squat, Exercise.benchPress, Exercise.deadlift, Exercise.bicepCurl])
+
+
 }
 
-class Exercise: Identifiable {
+class Exercise: Identifiable, Hashable {
     var id=UUID()
     var name: String
     var sets: [ExerciseSet]
@@ -60,9 +70,21 @@ class Exercise: Identifiable {
     func toggleRestTimer(){
         useRestTimer = !useRestTimer
     }
+    static func == (lhs: Exercise, rhs: Exercise) -> Bool {
+            return lhs.id == rhs.id
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    static let squat = Exercise(name: "Squat", sets: [ExerciseSet.squatSet1, ExerciseSet.squatSet2], useRestTimer: true, restTimer: 90)
+    static let benchPress = Exercise(name: "Bench Press", sets: [ExerciseSet.benchPressSet1, ExerciseSet.benchPressSet2], useRestTimer: true, restTimer: 60)
+    static let deadlift = Exercise(name: "Deadlift", sets: [ExerciseSet.deadliftSet1, ExerciseSet.deadliftSet2], useRestTimer: true, restTimer: 120)
+    static let bicepCurl = Exercise(name: "Bicep Curl", sets: [ExerciseSet.bicepCurlSet1, ExerciseSet.bicepCurlSet2], useRestTimer: false, restTimer: 0)
+
+
 }
 
-class ExerciseSet: Identifiable{
+class ExerciseSet: Identifiable, Hashable{
     var id=UUID()
     var reps: Int
     var weight: Double
@@ -83,4 +105,25 @@ class ExerciseSet: Identifiable{
     func toggleCompleted(){
         completed = !completed
     }
+    static func == (lhs: ExerciseSet, rhs: ExerciseSet) -> Bool {
+            return lhs.id == rhs.id
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static let squatSet1 = ExerciseSet(reps: 10, weight: 100, completed: false)
+    static let squatSet2 = ExerciseSet(reps: 8, weight: 110, completed: false)
+
+    static let benchPressSet1 = ExerciseSet(reps: 12, weight: 80, completed: false)
+    static let benchPressSet2 = ExerciseSet(reps: 10, weight: 85, completed: false)
+
+    static let deadliftSet1 = ExerciseSet(reps: 6, weight: 120, completed: false)
+    static let deadliftSet2 = ExerciseSet(reps: 5, weight: 130, completed: false)
+
+    static let bicepCurlSet1 = ExerciseSet(reps: 15, weight: 25, completed: false)
+    static let bicepCurlSet2 = ExerciseSet(reps: 12, weight: 30, completed: false)
+
 }
+
+
