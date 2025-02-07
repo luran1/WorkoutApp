@@ -50,13 +50,17 @@ class WorkoutRoutine: Identifiable, Hashable {
 class Exercise: Identifiable, Hashable {
     var id=UUID()
     var name: String
+    var notes: String
+    var weightType: String = "lb"
     var sets: [ExerciseSet]
     var useRestTimer: Bool = false
     var restTimer:Int=0
     
-    init(id: UUID = UUID(), name: String, sets: [ExerciseSet], useRestTimer: Bool, restTimer: Int) {
+    init(id: UUID = UUID(), name: String, notes: String, weightType: String, sets: [ExerciseSet], useRestTimer: Bool, restTimer: Int) {
         self.id = id
         self.name = name
+        self.notes = notes
+        self.weightType = weightType
         self.sets = sets
         self.useRestTimer = useRestTimer
         self.restTimer = restTimer
@@ -70,16 +74,23 @@ class Exercise: Identifiable, Hashable {
     func toggleRestTimer(){
         useRestTimer = !useRestTimer
     }
+    func togglePoundsAndKillograms(){
+        if weightType=="lb" {
+            weightType="Kg"
+        } else {
+            weightType="lb"
+        }
+    }
     static func == (lhs: Exercise, rhs: Exercise) -> Bool {
             return lhs.id == rhs.id
     }
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
-    static let squat = Exercise(name: "Squat", sets: [ExerciseSet.squatSet1, ExerciseSet.squatSet2], useRestTimer: true, restTimer: 90)
-    static let benchPress = Exercise(name: "Bench Press", sets: [ExerciseSet.benchPressSet1, ExerciseSet.benchPressSet2], useRestTimer: true, restTimer: 60)
-    static let deadlift = Exercise(name: "Deadlift", sets: [ExerciseSet.deadliftSet1, ExerciseSet.deadliftSet2], useRestTimer: true, restTimer: 120)
-    static let bicepCurl = Exercise(name: "Bicep Curl", sets: [ExerciseSet.bicepCurlSet1, ExerciseSet.bicepCurlSet2], useRestTimer: false, restTimer: 0)
+    static let squat = Exercise(name: "Squat", notes: "", weightType: "lb", sets: [ExerciseSet.squatSet1, ExerciseSet.squatSet2], useRestTimer: true, restTimer: 90)
+    static let benchPress = Exercise(name: "Bench Press", notes: "", weightType: "lb", sets: [ExerciseSet.benchPressSet1, ExerciseSet.benchPressSet2], useRestTimer: true, restTimer: 60)
+    static let deadlift = Exercise(name: "Deadlift", notes: "", weightType: "lb", sets: [ExerciseSet.deadliftSet1, ExerciseSet.deadliftSet2], useRestTimer: true, restTimer: 120)
+    static let bicepCurl = Exercise(name: "Bicep Curl", notes: "", weightType: "lb", sets: [ExerciseSet.bicepCurlSet1, ExerciseSet.bicepCurlSet2], useRestTimer: false, restTimer: 0)
 
 
 }

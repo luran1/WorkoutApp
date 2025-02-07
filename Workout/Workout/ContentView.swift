@@ -10,13 +10,20 @@ import SwiftUI
 struct ContentView: View {
     @State private var workoutRoutines: [WorkoutRoutine] = [WorkoutRoutine.exampleWorkoutRoutine]
     var body: some View {
-        ScrollView{
-            LazyVStack{
-                ForEach(workoutRoutines, id: \.self){ workoutRoutine in
-                    Text(workoutRoutine.name)
+        NavigationStack{
+            ScrollView{
+                LazyVStack{
+                    ForEach(workoutRoutines, id: \.self){ workoutRoutine in
+                        NavigationLink(value: workoutRoutine) {
+                            Text(workoutRoutine.name)
+                        }
+                        }
+                    }
                 }
+            .navigationDestination(for: WorkoutRoutine.self){workout in
+                WorkoutDetailsView(workout: workout)
             }
-        }
+            }
     }
 }
 
