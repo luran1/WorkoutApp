@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct WorkoutDetailsView: View {
-    @State var workout: WorkoutRoutine
+    var workout: WorkoutRoutine
+    
     var body: some View {
-        NavigationStack{
             ScrollView{
                 LazyVStack{
                     ForEach(workout.exercises, id: \.self){ exercise in
@@ -41,7 +41,6 @@ struct WorkoutDetailsView: View {
                 }
             }
             .navigationTitle(workout.name)
-        }
     }
 }
 
