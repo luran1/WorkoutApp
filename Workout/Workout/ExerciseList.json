@@ -1,0 +1,294 @@
+{
+  "exercises": [
+    {
+      "exercise": "Push-up",
+      "targeted_muscle_group": "Chest",
+      "muscles_involved": ["Chest", "Shoulders", "Triceps", "Core"]
+    },
+    {
+      "exercise": "Pull-up",
+      "targeted_muscle_group": "Back",
+      "muscles_involved": ["Back", "Biceps", "Forearms", "Shoulders"]
+    },
+    {
+      "exercise": "Squat",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes", "Hamstrings", "Core"]
+    },
+    {
+      "exercise": "Lunge",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes", "Hamstrings", "Core"]
+    },
+    {
+      "exercise": "Plank",
+      "targeted_muscle_group": "Core",
+      "muscles_involved": ["Abdominals", "Obliques", "Shoulders", "Glutes"]
+    },
+    {
+      "exercise": "Deadlift",
+      "targeted_muscle_group": "Back",
+      "muscles_involved": ["Back", "Glutes", "Hamstrings", "Core"]
+    },
+    {
+      "exercise": "Bench Press",
+      "targeted_muscle_group": "Chest",
+      "muscles_involved": ["Chest", "Shoulders", "Triceps"]
+    },
+    {
+      "exercise": "Bicep Curl",
+      "targeted_muscle_group": "Arms",
+      "muscles_involved": ["Biceps", "Forearms"]
+    },
+    {
+      "exercise": "Tricep Dips",
+      "targeted_muscle_group": "Arms",
+      "muscles_involved": ["Triceps", "Shoulders", "Chest"]
+    },
+    {
+      "exercise": "Leg Press",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes", "Hamstrings"]
+    },
+    {
+      "exercise": "Mountain Climbers",
+      "targeted_muscle_group": "Core",
+      "muscles_involved": ["Core", "Shoulders", "Legs"]
+    },
+    {
+      "exercise": "Jumping Jacks",
+      "targeted_muscle_group": "Full Body",
+      "muscles_involved": ["Legs", "Shoulders", "Core"]
+    },
+    {
+      "exercise": "Burpees",
+      "targeted_muscle_group": "Full Body",
+      "muscles_involved": ["Chest", "Shoulders", "Legs", "Core"]
+    },
+    {
+      "exercise": "Russian Twists",
+      "targeted_muscle_group": "Core",
+      "muscles_involved": ["Obliques", "Abdominals"]
+    },
+    {
+      "exercise": "Kettlebell Swing",
+      "targeted_muscle_group": "Glutes",
+      "muscles_involved": ["Glutes", "Hamstrings", "Core", "Shoulders"]
+    },
+    {
+      "exercise": "Sit-up",
+      "targeted_muscle_group": "Core",
+      "muscles_involved": ["Abdominals", "Hip Flexors"]
+    },
+    {
+      "exercise": "Leg Raise",
+      "targeted_muscle_group": "Core",
+      "muscles_involved": ["Lower Abdominals", "Hip Flexors"]
+    },
+    {
+      "exercise": "Glute Bridge",
+      "targeted_muscle_group": "Glutes",
+      "muscles_involved": ["Glutes", "Hamstrings", "Core"]
+    },
+    {
+      "exercise": "Box Jump",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes", "Calves"]
+    },
+    {
+      "exercise": "Overhead Press",
+      "targeted_muscle_group": "Shoulders",
+      "muscles_involved": ["Shoulders", "Triceps", "Core"]
+    },
+    {
+      "exercise": "Chin-up",
+      "targeted_muscle_group": "Back",
+      "muscles_involved": ["Back", "Biceps", "Shoulders"]
+    },
+    {
+      "exercise": "Renegade Row",
+      "targeted_muscle_group": "Back",
+      "muscles_involved": ["Back", "Core", "Shoulders"]
+    },
+    {
+      "exercise": "Dumbbell Shoulder Press",
+      "targeted_muscle_group": "Shoulders",
+      "muscles_involved": ["Shoulders", "Triceps", "Core"]
+    },
+    {
+      "exercise": "Leg Extension",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads"]
+    },
+    {
+      "exercise": "Hip Thrust",
+      "targeted_muscle_group": "Glutes",
+      "muscles_involved": ["Glutes", "Hamstrings"]
+    },
+    {
+      "exercise": "Chest Fly",
+      "targeted_muscle_group": "Chest",
+      "muscles_involved": ["Chest", "Shoulders", "Triceps"]
+    },
+    {
+      "exercise": "Seated Row",
+      "targeted_muscle_group": "Back",
+      "muscles_involved": ["Back", "Biceps", "Forearms"]
+    },
+    {
+      "exercise": "Lat Pulldown",
+      "targeted_muscle_group": "Back",
+      "muscles_involved": ["Back", "Biceps"]
+    },
+    {
+      "exercise": "Sled Push",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes", "Hamstrings"]
+    },
+    {
+      "exercise": "Calf Raise",
+      "targeted_muscle_group": "Calves",
+      "muscles_involved": ["Calves"]
+    },
+    {
+      "exercise": "Flutter Kicks",
+      "targeted_muscle_group": "Core",
+      "muscles_involved": ["Lower Abdominals", "Hip Flexors"]
+    },
+    {
+      "exercise": "Cable Kickback",
+      "targeted_muscle_group": "Glutes",
+      "muscles_involved": ["Glutes", "Hamstrings"]
+    },
+    {
+      "exercise": "Superman",
+      "targeted_muscle_group": "Back",
+      "muscles_involved": ["Lower Back", "Glutes", "Shoulders"]
+    },
+    {
+      "exercise": "Skater Jumps",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes", "Calves"]
+    },
+    {
+      "exercise": "Tricep Kickback",
+      "targeted_muscle_group": "Arms",
+      "muscles_involved": ["Triceps", "Shoulders"]
+    },
+    {
+      "exercise": "Tuck Jump",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes"]
+    },
+    {
+      "exercise": "Zottman Curl",
+      "targeted_muscle_group": "Arms",
+      "muscles_involved": ["Biceps", "Forearms"]
+    },
+    {
+      "exercise": "Front Raise",
+      "targeted_muscle_group": "Shoulders",
+      "muscles_involved": ["Shoulders", "Trapezius"]
+    },
+    {
+      "exercise": "Wall Sit",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes"]
+    },
+    {
+      "exercise": "Bear Crawl",
+      "targeted_muscle_group": "Full Body",
+      "muscles_involved": ["Core", "Shoulders", "Legs"]
+    },
+    {
+      "exercise": "Glute Kickback",
+      "targeted_muscle_group": "Glutes",
+      "muscles_involved": ["Glutes", "Hamstrings"]
+    },
+    {
+      "exercise": "Barbell Row",
+      "targeted_muscle_group": "Back",
+      "muscles_involved": ["Back", "Shoulders", "Biceps"]
+    },
+    {
+      "exercise": "Frog Jumps",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes", "Calves"]
+    },
+    {
+      "exercise": "Side Plank",
+      "targeted_muscle_group": "Core",
+      "muscles_involved": ["Obliques", "Abdominals", "Shoulders"]
+    },
+    {
+      "exercise": "Reverse Lunge",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes", "Hamstrings"]
+    },
+    {
+      "exercise": "Sumo Deadlift",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Glutes", "Hamstrings", "Inner Thighs", "Back"]
+    },
+    {
+      "exercise": "Thruster",
+      "targeted_muscle_group": "Full Body",
+      "muscles_involved": ["Legs", "Shoulders", "Core"]
+    },
+    {
+      "exercise": "Cossack Squat",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes", "Hamstrings", "Adductors"]
+    },
+    {
+      "exercise": "Sprints",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes", "Calves", "Core"]
+    },
+    {
+      "exercise": "Treadmill Walk",
+      "targeted_muscle_group": "Legs",
+      "muscles_involved": ["Quads", "Glutes", "Calves"]
+    },
+    {
+      "exercise": "Rowing Machine",
+      "targeted_muscle_group": "Full Body",
+      "muscles_involved": ["Back", "Legs", "Core"]
+    },
+    {
+      "exercise": "Jump Rope",
+      "targeted_muscle_group": "Full Body",
+      "muscles_involved": ["Calves", "Shoulders", "Core"]
+    },
+    {
+      "exercise": "Battle Rope Waves",
+      "targeted_muscle_group": "Shoulders",
+      "muscles_involved": ["Shoulders", "Core", "Arms"]
+    },
+    {
+      "exercise": "Ab Wheel Rollout",
+      "targeted_muscle_group": "Core",
+      "muscles_involved": ["Abdominals", "Hip Flexors", "Shoulders"]
+    },
+    {
+      "exercise": "Bicycle Crunch",
+      "targeted_muscle_group": "Core",
+      "muscles_involved": ["Abdominals", "Obliques", "Hip Flexors"]
+    },
+    {
+      "exercise": "Mountain Climber Push-up",
+      "targeted_muscle_group": "Full Body",
+      "muscles_involved": ["Core", "Chest", "Shoulders", "Legs"]
+    },
+    {
+      "exercise": "Clamshell",
+      "targeted_muscle_group": "Glutes",
+      "muscles_involved": ["Glutes", "Outer Thighs"]
+    },
+    {
+      "exercise": "Scissor Kicks",
+      "targeted_muscle_group": "Core",
+      "muscles_involved": ["Abdominals", "Hip Flexors"]
+    }
+  ]
+}

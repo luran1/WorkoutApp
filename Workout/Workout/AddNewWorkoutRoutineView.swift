@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct AddNewWorkoutRoutineView: View {
     @State private var newWorkout: [Exercise]=[]
     @State private var name = "Routine Name"

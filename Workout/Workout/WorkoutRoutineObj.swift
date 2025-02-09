@@ -65,6 +65,16 @@ class Exercise: Identifiable, Hashable {
         self.useRestTimer = useRestTimer
         self.restTimer = restTimer
     }
+    init(id: UUID = UUID(), name: String) {
+        self.id = id
+        self.name = name
+        self.notes = ""
+        self.weightType = ""
+        self.sets = [ExerciseSet()]
+        self.useRestTimer = true
+        self.restTimer = 30
+
+    }
     func addSet(_ newSet: ExerciseSet){
         sets.append(newSet)
     }
@@ -107,6 +117,13 @@ class ExerciseSet: Identifiable, Hashable{
         self.weight = weight
         self.completed = completed
     }
+    init(id: UUID = UUID()) {
+        self.id = id
+        self.reps = 0
+        self.weight = 0.00
+        self.completed = false
+    }
+    
     func changeReps(to newRepCount: Int){
         reps = newRepCount
     }
