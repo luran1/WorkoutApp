@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct AddNewWorkoutRoutineView: View {
-    @State private var newWorkout: [Exercise]=[]
+    @State var newWorkout: [Exercise]
     @State private var name = "Routine Name"
     var body: some View {
         Form{
@@ -24,5 +24,5 @@ struct AddNewWorkoutRoutineView: View {
 }
 
 #Preview {
-    AddNewWorkoutRoutineView()
+    AddNewWorkoutRoutineView(newWorkout: [Exercise(name: "push-Ups")])
 }

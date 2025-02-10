@@ -26,7 +26,7 @@ struct ContentView: View {
             }
             .toolbar{
                 ToolbarItem(placement: .primaryAction){
-                    NavigationLink(destination: AddNewWorkoutRoutineView(), label: {Label("Add new workout Routine", systemImage: "plus")})
+                    NavigationLink(destination: AddExerciseSelectionView(), label: {Label("Add new workout Routine", systemImage: "plus")})
                 }
             }
         }

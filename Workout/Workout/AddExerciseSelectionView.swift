@@ -10,6 +10,7 @@ import SwiftUI
 struct AddExerciseSelectionView: View {
     @State private var ListOfExercises: [ExerciseListItem] = []
     @State private var ListOfSelectedExercises: [Exercise] = []
+    @State private var showSelectedExercises = false
     let targetedMuscleGroups: [String] = [
         "Chest",
         "Back",
@@ -21,6 +22,17 @@ struct AddExerciseSelectionView: View {
         "Core"
     ]
     var body: some View {
+        if showSelectedExercises{
+            List{
+                Section("Selected Exercises"){
+                    ForEach(ListOfSelectedExercises){ exercise in
+                        Text(exercise.name)
+                        
+                    }
+                }
+            }
+            .containerRelativeFrame(.vertical, count: 5, spacing: 5)
+        }
         List{
             ForEach(targetedMuscleGroups, id: \.self){ muscle in
                 Section(muscle){
@@ -49,8 +61,17 @@ struct AddExerciseSelectionView: View {
             loadList()
         }
         .toolbar{
-            ToolbarItem(placement: .status){
+            ToolbarItem(placement: .primaryAction){
                 
+                Toggle(isOn: $showSelectedExercises, label: {
+                    Label("Show selected Exercises", systemImage: "text.line.first.and.arrowtriangle.forward")
+
+                })
+            }
+            ToolbarItem(placement: .confirmationAction){
+                NavigationLink(destination: AddNewWorkoutRoutineView(newWorkout: ListOfSelectedExercises), label: {
+                    Label("Confirm exercise selection", systemImage: "arrow.right")
+                })
             }
         }
     }
