@@ -15,7 +15,31 @@ struct AddNewWorkoutRoutineView: View {
         Form{
             TextField("Routine Name", text: $name)
             Section{
-                //add exercises
+                ForEach($newWorkout){ exercise in
+                    VStack(alignment: .leading){
+                        Text(exercise.wrappedValue.name)
+                        TextField("Notes", text: exercise.notes, axis: .vertical)
+                            .lineLimit(1...3)
+                        HStack(alignment: .center, spacing: 22){
+                            Spacer()
+                            VStack{
+                                Text("Set")
+                                Text("\(1)")
+                            }
+                            
+                            VStack{
+                                Text("Weight")
+                                Text("\(100)")
+                            }
+                            VStack{
+                                Text("Reps")
+                                Text("\(10)")
+                            }
+                            Spacer()
+                        }
+                    }
+                    
+                }
             }
             
         }
