@@ -19,23 +19,33 @@ struct AddNewWorkoutRoutineView: View {
                     VStack(alignment: .leading){
                         Text(exercise.wrappedValue.name)
                         TextField("Notes", text: exercise.notes, axis: .vertical)
-                            .lineLimit(1...3)
-                        HStack(alignment: .center, spacing: 22){
-                            Spacer()
-                            VStack{
-                                Text("Set")
-                                Text("\(1)")
+                            .lineLimit(1...2)
+                        ForEach(exercise.sets.indices){index in
+                            HStack(alignment: .center, spacing: 22){
+                                Spacer()
+                                VStack{
+                                    Text("Set")
+                                    Text("\(index+1)")
+                                }
+                                
+                                VStack{
+                                    Text("Weight")
+                                    Text("\(100)")
+                                }
+                                VStack{
+                                    Text("Reps")
+                                    Text("\(10)")
+                                }
+                                Spacer()
                             }
+                        }
+                        Button{
                             
-                            VStack{
-                                Text("Weight")
-                                Text("\(100)")
-                            }
-                            VStack{
-                                Text("Reps")
-                                Text("\(10)")
-                            }
-                            Spacer()
+                            //Add new set
+                        } label:{
+                            //Label("Add new set to \(exercise.name)", systemImage: "plus")
+                            //Does not work as intended
+                            Label("Add set", systemImage: "plus")
                         }
                     }
                     
