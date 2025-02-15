@@ -47,6 +47,7 @@ class WorkoutRoutine: Identifiable, Hashable {
 
 }
 
+@Observable
 class Exercise: Identifiable, Hashable {
     var id=UUID()
     var name: String
@@ -105,6 +106,7 @@ class Exercise: Identifiable, Hashable {
 
 }
 
+@Observable
 class ExerciseSet: Identifiable, Hashable{
     var id=UUID()
     var reps: Int

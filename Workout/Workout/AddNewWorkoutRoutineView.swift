@@ -11,52 +11,66 @@ import SwiftUI
 struct AddNewWorkoutRoutineView: View {
     @State var newWorkout: [Exercise]
     @State private var name = "Routine Name"
+    @FocusState private var IsFocused: Bool
     var body: some View {
         Form{
             TextField("Routine Name", text: $name)
             Section{
-                ForEach($newWorkout){ exercise in
-                    VStack(alignment: .leading){
-                        Text(exercise.wrappedValue.name)
-                        TextField("Notes", text: exercise.notes, axis: .vertical)
+                ForEach(newWorkout.indices, id: \.self){ exercise in
+                    Section(header: Text(newWorkout[exercise].name)){
+                        Stepper(value: $newWorkout[exercise].restTimer, in: 0...180, step: 5) {
+                                        Text("Rest Time: \(Int(newWorkout[exercise].restTimer)) seconds")
+                                    }
+                        TextField("Notes", text: $newWorkout[exercise].notes, axis: .vertical)
                             .lineLimit(1...2)
-                        ForEach(exercise.sets.indices){index in
-                            HStack(alignment: .center, spacing: 22){
-                                Spacer()
-                                VStack{
-                                    Text("Set")
-                                    Text("\(index+1)")
+                        HStack(spacing: 30){
+                            Spacer()
+                            VStack(alignment: .center){
+                                Text("Set")
+                                ForEach(newWorkout[exercise].sets.indices, id: \.self){ setIndex in
+                                    Text("\(setIndex+1)")
                                 }
-                                
-                                VStack{
-                                    Text("Weight")
-                                    Text("\(100)")
-                                }
-                                VStack{
-                                    Text("Reps")
-                                    Text("\(10)")
-                                }
-                                Spacer()
                             }
+                            VStack(alignment: .center){
+                                Text("Weight")
+                                ForEach(newWorkout[exercise].sets.indices, id: \.self){ setIndex in
+                                    TextField(String(format: "%0.1f", newWorkout[exercise].sets[setIndex].weight), value: $newWorkout[exercise].sets[setIndex].weight, format: .number)
+                                        .keyboardType(.decimalPad)
+                                        .focused($IsFocused)
+                                }
+                            }
+                            VStack(alignment: .center){
+                                Text("Reps")
+                                ForEach(newWorkout[exercise].sets.indices, id: \.self){ setIndex in
+                                    TextField("\(newWorkout[exercise].sets[setIndex].reps)", value: $newWorkout[exercise].sets[setIndex].reps, format: .number)
+                                        .keyboardType(.numberPad)
+                                        .focused($IsFocused)
+                                }
+                            }
+                            Spacer()
                         }
                         Button{
-                            
-                            //Add new set
-                        } label:{
-                            //Label("Add new set to \(exercise.name)", systemImage: "plus")
-                            //Does not work as intended
-                            Label("Add set", systemImage: "plus")
+                            newWorkout[exercise].sets.append(ExerciseSet())
+                            print(newWorkout[exercise].sets.count)
+                        } label: {
+                            Label("Add new set", systemImage: "plus")
                         }
                     }
-                    
                 }
             }
-            
+        }
+        .toolbar{
+            ToolbarItemGroup(placement: .keyboard){
+                Button("Done"){
+                    IsFocused = false
+                }
+            }
         }
         .navigationTitle(name)
     }
+        
 }
 
 #Preview {
-    AddNewWorkoutRoutineView(newWorkout: [Exercise(name: "push-Ups")])
+    AddNewWorkoutRoutineView(newWorkout: [Exercise.benchPress,Exercise.bicepCurl])
 }
