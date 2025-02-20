@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var workoutRoutines: [WorkoutRoutine] = [WorkoutRoutine.exampleWorkoutRoutine]
-    @State private var path = NavigationPath()
+    @State var path = NavigationPath()
     var body: some View {
         NavigationStack(path: $path){
             ScrollView{
@@ -21,13 +21,23 @@ struct ContentView: View {
                         }
                     }
                 }
-            .navigationDestination(for: WorkoutRoutine.self){workout in
-                WorkoutDetailsView(workout: workout)
-            }
             .toolbar{
                 ToolbarItem(placement: .primaryAction){
-                    NavigationLink(destination: AddExerciseSelectionView(), label: {Label("Add new workout Routine", systemImage: "plus")})
+                    NavigationLink(value: "AddNewWorkout"){
+                        Label("add new workout", systemImage: "plus")
+                    }
                 }
+            }
+            .navigationDestination(for: String.self){addWorkout in
+                AddExerciseSelectionView(path: $path)
+            }
+            .navigationDestination(for: WorkoutRoutine.self){workout in
+                WorkoutDetailsView(workout: workout)
+
+            }
+            .navigationDestination(for: [Exercise].self){SelectedExercises in
+                AddNewWorkoutRoutineView(newWorkout: SelectedExercises, path: $path)
+
             }
         }
     }

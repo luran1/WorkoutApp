@@ -11,6 +11,7 @@ struct AddExerciseSelectionView: View {
     @State private var ListOfExercises: [ExerciseListItem] = []
     @State private var ListOfSelectedExercises: [Exercise] = []
     @State private var showSelectedExercises = false
+    @Binding var path: NavigationPath
     let targetedMuscleGroups: [String] = [
         "Chest",
         "Back",
@@ -69,9 +70,10 @@ struct AddExerciseSelectionView: View {
                 })
             }
             ToolbarItem(placement: .confirmationAction){
-                NavigationLink(destination: AddNewWorkoutRoutineView(newWorkout: ListOfSelectedExercises), label: {
+                NavigationLink(value: ListOfSelectedExercises){
                     Label("Confirm exercise selection", systemImage: "arrow.right")
-                })
+                }
+                .disabled(ListOfSelectedExercises.isEmpty)
             }
         }
     }
@@ -96,5 +98,11 @@ struct AddExerciseSelectionView: View {
 
 
 #Preview {
-    AddExerciseSelectionView()
+    struct MyPreview: View {
+        @State var path = NavigationPath()
+        var body: some View {
+            AddExerciseSelectionView(path: $path)
+        }
+    }
+    return MyPreview()
 }

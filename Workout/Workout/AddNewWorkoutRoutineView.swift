@@ -11,6 +11,7 @@ import SwiftUI
 struct AddNewWorkoutRoutineView: View {
     @State var newWorkout: [Exercise]
     @State private var name = "Routine Name"
+    @Binding var path: NavigationPath
     @FocusState private var IsFocused: Bool
     var body: some View {
         Form{
@@ -65,6 +66,13 @@ struct AddNewWorkoutRoutineView: View {
                     IsFocused = false
                 }
             }
+            ToolbarItem(placement: .confirmationAction){
+                Button("Save"){
+                    print(path.isEmpty)
+                    path = NavigationPath()
+                    print(path.isEmpty)
+                }
+            }
         }
         .navigationTitle(name)
     }
@@ -72,5 +80,12 @@ struct AddNewWorkoutRoutineView: View {
 }
 
 #Preview {
-    AddNewWorkoutRoutineView(newWorkout: [Exercise.benchPress,Exercise.bicepCurl])
+//    struct MyPreview: View {
+//        @State var path = NavigationPath()
+//        var body: some View {
+//            AddNewWorkoutRoutineView(newWorkout: [Exercise.benchPress,Exercise.bicepCurl], path: $path)
+//        }
+//    }
+//    return MyPreview()
+//    AddNewWorkoutRoutineView(newWorkout: [Exercise.benchPress,Exercise.bicepCurl])
 }
